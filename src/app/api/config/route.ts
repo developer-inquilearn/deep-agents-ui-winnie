@@ -8,6 +8,6 @@ export async function GET() {
   );
   return NextResponse.json({
     configured,
-    assistantId: process.env.LANGGRAPH_ASSISTANT_ID ?? null,
+    assistantId: process.env.LANGGRAPH_ASSISTANT_ID?.trim() ?? null,
   });
 }
