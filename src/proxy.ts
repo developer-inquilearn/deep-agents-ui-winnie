@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const APP_PIN = process.env.APP_PIN;
-const AUTH_SECRET = process.env.AUTH_SECRET;
+const APP_PIN = process.env.APP_PIN?.trim();
+const AUTH_SECRET = process.env.AUTH_SECRET?.trim();
 const COOKIE_NAME = "app_auth";
 
 async function computeToken(pin: string, secret: string): Promise<string> {
