@@ -17,7 +17,7 @@ async function computeToken(pin: string, secret: string): Promise<string> {
   return btoa(String.fromCharCode(...new Uint8Array(sig)));
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // Only guard the LangGraph proxy
   if (!request.nextUrl.pathname.startsWith("/api/langgraph")) {
     return NextResponse.next();
